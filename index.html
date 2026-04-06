@@ -1,16 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>My ChatGPT Clone</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Chatbot</h1>
+  <div class="container">
+    <header class="header">
+      <h1>Chatbot</h1>
+      <div class="header-actions">
+        <button id="clearBtn" title="Clear chat">Clear</button>
+      </div>
+    </header>
 
-  <div id="chat"></div>
+    <main>
+      <div id="chat" class="chat-window" aria-live="polite"></div>
+    </main>
 
-  <input id="userInput" placeholder="Type a message..." />
-  <button onclick="sendMessage()">Send</button>
+    <footer class="composer">
+      <textarea id="userInput" placeholder="Type a message..." rows="1"></textarea>
+      <div class="controls">
+        <button id="sendBtn">Send</button>
+        <div id="spinner" class="spinner hidden" aria-hidden="true"></div>
+      </div>
+    </footer>
+  </div>
 
   <script src="script.js"></script>
 </body>
