@@ -7,25 +7,45 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <header class="header">
-      <h1>Chatbot</h1>
-      <div class="header-actions">
-        <button id="clearBtn" title="Clear chat">Clear</button>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <h2>Saved Chats</h2>
+        <button id="sidebarToggle" class="sidebar-toggle">✕</button>
       </div>
-    </header>
+      <div id="savedChatsList" class="saved-chats-list"></div>
+    </aside>
 
-    <main>
-      <div id="chat" class="chat-window" aria-live="polite"></div>
-    </main>
-
-    <footer class="composer">
-      <textarea id="userInput" placeholder="Type a message..." rows="1"></textarea>
-      <div class="controls">
-        <button id="sendBtn">Send</button>
-        <div id="spinner" class="spinner hidden" aria-hidden="true"></div>
+    <div class="main-container">
+      <div class="app-header">
+        <div class="header-left">
+          <button id="sidebarToggleOpen" class="sidebar-toggle-open" title="Toggle menu">☰</button>
+          <button id="saveBtn" class="secondary">Save chat</button>
+          <div class="brand">
+            <div class="brand-mark">AI</div>
+            <div>
+              <h1>ChatClone</h1>
+              <p>Powered by Ollama</p>
+            </div>
+          </div>
+        </div>
+        <button id="clearBtn" class="secondary">New chat</button>
       </div>
-    </footer>
+
+      <main class="chat-panel">
+        <div id="chat" class="chat-window" aria-live="polite"></div>
+      </main>
+
+      <footer class="composer">
+        <div class="composer-input">
+          <textarea id="userInput" placeholder="Type a message..." rows="1"></textarea>
+        </div>
+        <div class="composer-actions">
+          <button id="sendBtn" class="primary">Send</button>
+          <div id="spinner" class="spinner hidden" aria-hidden="true"></div>
+        </div>
+      </footer>
+    </div>
   </div>
 
   <script src="script.js"></script>

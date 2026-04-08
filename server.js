@@ -9,7 +9,9 @@ app.use(express.json());
 require('dotenv').config();
 const USE_OLLAMA = process.env.USE_OLLAMA !== 'false';
 const OLLAMA_MODEL = process.env.OLLAMA_MODEL || 'mistral';
-const OLLAMA_PORT = process.env.OLLAMA_PORT || '11435';
+const OLLAMA_PORT = process.env.OLLAMA_PORT || '11434';
+const rawOllamaHost = process.env.OLLAMA_HOST || `localhost:${OLLAMA_PORT}`;
+const OLLAMA_HOST = rawOllamaHost.match(/^https?:\/\//) ? rawOllamaHost : `http://${rawOllamaHost}`;
 
 // Ensure `fetch` is available in older Node versions by lazy-loading `node-fetch` if needed.
 if (typeof fetch === 'undefined') {
@@ -28,7 +30,7 @@ app.post('/chat', async (req, res) => {
 
     if (!USE_OLLAMA) return res.status(500).json({ reply: 'Ollama disabled (set USE_OLLAMA=true in .env)' });
 
-    const ollamaUrl = `http://localhost:${OLLAMA_PORT}/api/generate`;
+    const ollamaUrl = `${OLLAMA_HOST}/api/generate`;
     console.log(`Ollama request -> ${ollamaUrl}  model=${OLLAMA_MODEL}`);
 
     const resp = await fetch(ollamaUrl, {
