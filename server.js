@@ -23,6 +23,14 @@ if (typeof fetch === 'undefined') {
   }
 }
 
+if (typeof TextDecoder === 'undefined') {
+  global.TextDecoder = require('util').TextDecoder;
+}
+
+if (typeof TextEncoder === 'undefined') {
+  global.TextEncoder = require('util').TextEncoder;
+}
+
 app.post('/chat', async (req, res) => {
   try {
     const userMessage = req.body.message;
@@ -82,4 +90,8 @@ app.post('/chat', async (req, res) => {
 });
 
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT} (Ollama port ${OLLAMA_PORT})`));
+if (require.main === module) {
+  app.listen(PORT, () => console.log(`Server running on port ${PORT} (Ollama port ${OLLAMA_PORT})`));
+}
+
+module.exports = app;

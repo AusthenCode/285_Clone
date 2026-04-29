@@ -203,3 +203,24 @@ function setup() {
 }
 
 document.addEventListener('DOMContentLoaded', setup);
+
+const exportedScript = {
+  escapeHtml,
+  appendMessage,
+  saveChat,
+  loadSavedChats,
+  loadChat,
+  renameChat,
+  deleteChat,
+  sendMessage,
+  setup,
+  chatHistory
+};
+
+if (typeof globalThis !== 'undefined') {
+  Object.assign(globalThis, exportedScript);
+}
+
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = exportedScript;
+}
