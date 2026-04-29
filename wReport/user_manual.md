@@ -3,6 +3,8 @@
 ## Introduction
 Welcome to the chatbot web app. This manual explains how to use the page and interact with the chatbot, including saving, loading, renaming, deleting, and exporting conversations.
 
+---
+
 ## Page Overview
 The app has three main areas:
 
@@ -16,6 +18,8 @@ The app has three main areas:
 - Each message includes a timestamp.
 - The chat scrolls automatically as new messages appear.
 
+---
+
 ### Input Area
 - Type your message in the input box.
 - Press **Enter** or click the **Send** button to submit.
@@ -24,6 +28,8 @@ The app has three main areas:
 ### Saved Chat Sidebar
 - Saved chats are listed with titles and dates.
 - If no chats are saved, the sidebar shows a placeholder message.
+
+---
 
 ## How to Send a Message
 1. Click the input field at the bottom of the page.
@@ -36,6 +42,8 @@ The app has three main areas:
 2. The conversation is stored in your browser.
 3. A confirmation alert appears when save is successful.
 
+---
+
 ### What Gets Saved
 - All user messages
 - All bot replies
@@ -46,6 +54,8 @@ The app has three main areas:
 1. Find the chat in the saved chat sidebar.
 2. Click **Load** next to the conversation.
 3. The chat history will replace the current chat window.
+
+---
 
 ## Renaming a Saved Chat
 1. Find the conversation in the saved sidebar.
@@ -58,6 +68,8 @@ The app has three main areas:
 2. Click **Delete**.
 3. Confirm the deletion when prompted.
 
+---
+
 ## Exporting a Chat
 1. Open a saved chat or keep the active chat loaded.
 2. Click the **Export** button.
@@ -69,6 +81,8 @@ The app has three main areas:
 - Use the sidebar to organize conversations.
 - Refresh the page only after saving important chats.
 
+---
+
 ## Troubleshooting
 ### The chat does not send
 - Make sure your message is not blank.
@@ -79,6 +93,8 @@ The app has three main areas:
 - Confirm you saved at least one chat.
 - Reload the page to refresh the sidebar.
 - Check browser storage settings if saving still fails.
+
+---
 
 ### Error: could not reach server
 - Make sure the backend server is running.
