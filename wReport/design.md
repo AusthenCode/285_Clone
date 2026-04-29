@@ -9,6 +9,8 @@ This chatbot web app is built as a browser-based interface with a Node.js backen
 - **Storage**: Browser `localStorage` for saved chats
 - **AI Integration**: Ollama local model accessed via `/chat`
 
+---
+
 ## Components
 ### Frontend
 - **Chat window**: displays conversation messages
@@ -23,12 +25,16 @@ This chatbot web app is built as a browser-based interface with a Node.js backen
 - **Response processing**: reads streamed Ollama JSON lines and concatenates replies
 - **Error handling**: returns friendly error replies when backend fails
 
+---
+
 ## Data Flow
 1. User types a message and sends it.
 2. Frontend posts the message to `/chat`.
 3. Backend forwards the prompt to Ollama and reads streaming results.
 4. The chat response is returned to the client.
 5. The frontend appends the bot message to the chat window.
+
+---
 
 ## Storage Design
 - Chats are stored as JSON objects in `localStorage` under `savedChats`.
@@ -41,6 +47,8 @@ This chatbot web app is built as a browser-based interface with a Node.js backen
   - `text`
   - `time`
 
+---
+
 ## UI Design Principles
 - Dark theme for modern readability
 - Clear distinction between user and AI messages
@@ -52,6 +60,8 @@ This chatbot web app is built as a browser-based interface with a Node.js backen
 - Run the Node server locally with `node server.js`
 - Ensure Ollama is installed and running on the configured port
 - Use the browser to open `index.html`
+
+---
 
 ## Security and Reliability
 - Secrets are kept out of source control via `.env`
